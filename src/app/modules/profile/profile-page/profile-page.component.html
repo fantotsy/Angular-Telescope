@@ -1,0 +1,17 @@
+<div *ngIf="($user|async) as user">
+  <div class="profile-page">
+    <h1>Edit Profile</h1>
+
+    <div class="profile-page-form">
+      <form (ngSubmit)="updateProfile()" [formGroup]="form">
+        <div class="profile-page-form_row">
+          <input type="text" title="name" value="{{user.name}}" formControlName="name"/>
+        </div>
+        <div class="profile-page-form_row">
+          <input type="text" title="surname" value="{{user.surname}}" formControlName="surname"/>
+        </div>
+        <button type="submit" [disabled]="form.invalid">Update profile</button>
+      </form>
+    </div>
+  </div>
+</div>

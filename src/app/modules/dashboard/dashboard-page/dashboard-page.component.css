@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+.dashboard-widgets {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-widgets_item {
+  width: 30%;
+  text-align: center;
+}
