@@ -1,15 +1,18 @@
-<div *ngIf="($user|async) as user">
-  <h1>{{user.getFullName()}}</h1>
-  <div class="dashboard-widgets">
-    <div routerLink="/profile" class="dashboard-widgets_item">
-      <h2>My Profile</h2>
-      <div>First name: {{user.name}}</div>
-      <div>Last name: {{user.surname}}</div>
-    </div>
-    <div routerLink="/skills" class="dashboard-widgets_item">
-      <h2>My Skills</h2>
-      <div>Primary skill: {{user.skills.primary}}</div>
-      <div>Secondary skill: {{user.skills.secondary}}</div>
-    </div>
-  </div>
+<div *ngIf="(users)">
+  <ul>
+    <li *ngFor="let user of users"> 
+      <div class="dashboard-widgets">
+          <div routerLink="/profile/{{user.id}}" class="dashboard-widgets_item">
+            <h2>My Profile</h2>
+            <div>First name: {{user.firstName}}</div>
+            <div>Last name: {{user.lastName}}</div>
+          </div>
+          <div routerLink="/skills/{{user.id}}" class="dashboard-widgets_item">
+            <h2>My Skills</h2>
+            <div>Primary skill: {{user.skills.primarySkill}}</div>
+            <div>Secondary skill: {{user.skills.secondarySkill}}</div>
+          </div>
+      </div>
+    </li>
+  </ul>
 </div>

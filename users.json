@@ -1,0 +1,22 @@
+{
+  "usersList":[
+    {
+      "id": 1,
+      "firstName": "Vasya",
+      "lastName": "Vasiliich",
+      "skills": {
+        "primary": "Java",
+        "secondary": "JS"
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Petya",
+      "lastName": "Petrovich",
+      "skills": {
+        "primary": "JS",
+        "secondary": "Python"
+      }
+    }
+  ]
+}

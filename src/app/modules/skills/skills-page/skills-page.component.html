@@ -1,3 +1,17 @@
-<h1>Skills!</h1>
-
-{{user.name}}
+<div *ngIf="currentUser">
+    <div class="skills-page">
+      <h1>Edit Skills</h1>
+      <div class="skills-page_update">
+          <div class="skills-page-update-item update-primarySkill">
+            <input type="text" title="primarySkill" [(ngModel)]="currentUser.skills.primarySkill"/>
+          </div>
+          <button (click)="updateUser()">Update primary skill</button>
+      </div>
+      <div class="skills-page_update-item">
+          <div class="skills-page-update-item update-secondarySkill">
+            <input type="text" title="secondarySkill" [(ngModel)]="currentUser.skills.secondarySkill"/>
+          </div>
+          <button (click)="updateUser()">Update secondary skill</button>
+      </div>
+    </div>
+  </div>

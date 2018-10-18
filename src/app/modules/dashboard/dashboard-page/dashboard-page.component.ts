@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserStore} from '../../../core/storage/user-store';
-import {Observable} from 'rxjs';
-import {User} from '../../../core/auth/entity/user';
+import {UserDto} from '../../../core/auth/entity/userDto';
+import { HttpService } from '../../../core/auth/http.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -10,13 +10,16 @@ import {User} from '../../../core/auth/entity/user';
 })
 export class DashboardPageComponent implements OnInit {
 
-  $user: Observable<User>;
+  users: UserDto[];
 
-  constructor(private userStore: UserStore) {
+  constructor(private userStore: UserStore,
+              private httpService: HttpService) {
   }
 
   ngOnInit() {
-    this.$user = this.userStore.$get();
+    this.httpService.getUsers().subscribe(data => {
+      this.users=data;
+    });   
   }
 
 }

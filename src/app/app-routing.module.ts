@@ -18,11 +18,14 @@ const routes: Routes = [
     loadChildren: './modules/login/login.module#LoginModule'
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
     loadChildren: './modules/profile/profile.module#ProfileModule'
   },
   {
-    path: 'skills',
+    path: 'skills/:id',
+    canActivate: [AuthGuard],
     loadChildren: './modules/skills/skills.module#SkillsModule'
   }
 ];

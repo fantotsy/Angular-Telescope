@@ -1,7 +1,9 @@
+import { Skills } from './skills';
+
 export interface UserDto {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
-  skills: object;
+  skills: Skills;
   token: string;
 }

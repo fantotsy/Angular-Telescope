@@ -31,7 +31,10 @@ export class LoginPageComponent implements OnInit {
   submit(): void {
     const creds = this.form.value as UserCredentials;
     this.authService.login(creds).pipe(
-      tap(() => this.router.navigate(['']))
+      tap((user) => {
+        localStorage.setItem('token', user.token + 'f');
+        this.router.navigate(['']);
+      })
     ).subscribe();
   }
 
